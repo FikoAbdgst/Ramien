@@ -1,0 +1,201 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign .icon {
+    width: 20px;
+    color: white;
+}
+
+/* text */
+.text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    transition-duration: .3s;
+}
+
+/* hover effect on button width */
+.btn:hover {
+    width: 135px;
+    border-radius: 20px;
+    transition-duration: .3s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+}
+
+.btn:hover .icon {
+    width: full;
+    font-size: 500px;
+}
+
+/* hover effect button's text */
+.btn:hover .text {
+    position: absolute;
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+
+/* button click effect*/
+.btn:active {
+    transform: translate(2px, 2px);
+
+}
+
+.selected {
+    width: 135px;
+    border-radius: 20px;
+    background-color: rgb(211, 23, 23);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.selected .sign {
+    width: 30%;
+    padding-left: 20px;
+}
+
+.selected .icon {
+    width: full;
+    font-size: 500px;
+}
+
+/* hover effect button's text */
+.selected .text {
+    position: absolute;
+    opacity: 1;
+    width: 70%;
+    padding-right: 10px;
+}
+
+.form {
+    position: relative;
+    width: 180px;
+    margin: 12px 5px;
+    --accent-color: #ff5555;
+}
+
+.form:before {
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.form:before,
+.form:after {
+    content: "";
+    left: 0;
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+    bottom: -1px;
+    z-index: 4;
+    width: 80%;
+}
+
+.form:focus-within:before {
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.form:before {
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.form:focus-within:before {
+    border-bottom: 1px solid var(--accent-color);
+    transform: scaleX(1);
+}
+
+.form:focus-within:after {
+    border-bottom: 3px solid var(--accent-color);
+    transform: scaleX(1);
+}
+
+.form:after {
+    content: "";
+    transform: scaleX(0);
+    transition: transform 550ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    will-change: transform;
+    border-bottom: 3px solid var(--accent-color);
+    border-bottom-color: var(--accent-color);
+    -webkit-transition: transform 550ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    -moz-transition: transform 550ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    -ms-transition: transform 550ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    -o-transition: transform 550ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.payment::placeholder {
+    transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    opacity: 1;
+    user-select: none;
+    color: rgba(255, 255, 255, 0.582);
+}
+
+.form .payment {
+    border-radius: 5px 5px 0px 0px;
+    max-height: 36px;
+    background-color: transparent;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 200ms;
+    transition-property: background-color;
+    color: #353535;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px;
+    width: 80%;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+}
+
+.form .payment:focus,
+.form .payment:active {
+    outline: none;
+}
+
+.form:focus-within .payment,
+.form .payment:focus,
+.form .payment:active {
+    background-color: #7c7b7b;
+}
+
+.form:focus-within .payment::placeholder {
+    opacity: 0;
+}

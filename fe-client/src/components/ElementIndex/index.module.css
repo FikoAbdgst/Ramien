@@ -1,0 +1,17 @@
+.btn_about {
+    width: 208px;
+    transition: width 0.6s ease;
+}
+
+.btn_about:hover {
+    width: 240px;
+}
+
+.btn_about2 {
+    width: 40px;
+    transition: width 0.6s ease;
+}
+
+.btn_about2:hover {
+    width: 80px;
+}
